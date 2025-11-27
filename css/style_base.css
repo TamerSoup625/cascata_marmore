@@ -1,0 +1,80 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 5pt 20pt;
+    text-align: center;
+}
+
+header h1 {
+    color: white;
+    font-size: 40pt;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #006B8C;
+    color: white;
+    text-align: center;
+    padding: 20pt;
+    font-weight: bold;
+    font-size: 16pt;
+}
+
+.logo {
+    max-height: 100pt;
+}
+
+.lineup {
+    margin-bottom: 10pt;
+    font-size: 35pt;
+    font-style: italic;
+    color: white;
+    opacity: 50%;
+}
+
+#lineup-flex {
+    width: 100%;
+    color: rgb(252, 246, 246);
+    border-collapse: collapse;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+#lineup-flex {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100pt, 1fr));
+    gap: 8pt;
+}
+
+#lineup-flex > div {
+    padding: 4pt;
+}
+
+#place-contain {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1, 1fr));
+    gap: 8pt;
+    max-width: 900pt;
+    margin: auto;
+}
+
+@media (min-width: 600pt) {
+    #place-contain {
+        grid-template-columns: repeat(2, 1fr); /* Lock to exactly 2 columns */
+    }
+}
+
+#place-contain > a {
+    padding: 4pt;
+    border: 2pt solid #006B8C;
+    margin: 4pt;
+}
+
+#place-contain img {
+    position: relative;
+    width: 100%;
+}

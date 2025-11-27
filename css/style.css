@@ -1,0 +1,124 @@
+body {
+    font-family: "Inter", Arial, sans-serif;
+    margin: 0;
+    background: #f4f8fa;
+    color: #222;
+}
+
+/* ---------------- HEADER ---------------- */
+header {
+    background-color: #ffffff;
+    padding: 15pt 20pt;
+    text-align: center;
+    box-shadow: 0 2pt 6pt rgba(0,0,0,0.1);
+}
+
+.logo {
+    max-height: 100pt;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* ---------------- MAIN AREA ---------------- */
+
+#place-contain {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1, 1fr));
+    gap: 12pt;
+    max-width: 900pt;
+    margin: 20pt auto 40pt auto;
+    padding: 10pt;
+}
+
+@media (min-width: 600pt) {
+    #place-contain {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+#place-contain > a {
+    padding: 6pt;
+    margin: 4pt;
+    border: 2pt solid #008fb7;
+    border-radius: 12pt;
+    background: white;
+    text-decoration: none;
+    color: #00485c;
+    display: block;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 2pt 6pt rgba(0, 0, 0, 0.12);
+}
+
+#place-contain > a:hover {
+    transform: translateY(-4pt);
+    box-shadow: 0 6pt 14pt rgba(0, 0, 0, 0.18);
+}
+
+#place-contain p {
+    text-align: center;
+    font-size: 16pt;
+    margin: 8pt 0 10pt 0;
+    font-weight: 600;
+    color: #006B8C;
+}
+
+#place-contain img {
+    position: relative;
+    width: 100%;
+    border-radius: 10pt;
+    box-shadow: 0 2pt 8pt rgba(0,0,0,0.15);
+    transition: opacity 0.3s ease;
+}
+
+#place-contain img:hover {
+    opacity: 0.9;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer {
+    background: linear-gradient(180deg, #006B8C, #00485c);
+    color: white;
+    text-align: center;
+    padding: 30pt 20pt;
+    font-weight: bold;
+    font-size: 16pt;
+    margin-top: 40pt;
+    box-shadow: 0 -2pt 8pt rgba(0,0,0,0.15);
+}
+
+.lineup {
+    margin: 20pt 0 12pt 0;
+    font-size: 32pt;
+    font-style: italic;
+    opacity: 0.65;
+    letter-spacing: 1pt;
+}
+
+/* Names Grid */
+
+#lineup-flex {
+    color: rgb(240, 240, 240);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100pt, 1fr));
+    gap: 10pt;
+    font-weight: 300;
+    font-size: 15px;
+    margin-bottom: 20pt;
+    padding: 0 15pt;
+}
+
+#lineup-flex > div {
+    padding: 6pt 4pt;
+    border-radius: 6pt;
+    background: rgba(255,255,255,0.08);
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+#lineup-flex > div:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-2pt);
+}
