@@ -17,7 +17,7 @@
         "id": "sentiero3",
         "nome": "Sentiero 3",
         "descrizione": "sentiero3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis cupiditate dolore repellendus cum accusamus ipsa maxime, ex aliquid amet. Ipsam blanditiis voluptatum repellendus ad odit totam neque amet tenetur voluptatibus.",
-        "link": "https://my.matterport.com/show/?m=8T5SN7hn66g",
+        "link": "https://my.matterport.com/show/?m=W3FEJuMpACR",
         "img": "images/sentiero3.png"
     },
     "tunnel": {
@@ -52,7 +52,7 @@
         "id": "ponticello",
         "nome": "Sentiero 2 | Ponticello",
         "descrizione": "ponticello Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis cupiditate dolore repellendus cum accusamus ipsa maxime, ex aliquid amet. Ipsam blanditiis voluptatum repellendus ad odit totam neque amet tenetur voluptatibus.",
-        "link": "https://my.matterport.com/show/?m=W3FEJuMpACR",
+        "link": "https://my.matterport.com/show/?m=8T5SN7hn66g",
         "img": "images/ponticello.png"
     }
 }
