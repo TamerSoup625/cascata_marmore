@@ -123,30 +123,68 @@ footer {
     transform: translateY(-2pt);
 }
 
-/* Extra */
+/* BEAUTIFY FROM HERE */
+
+/* ---------------- MAP SECTION ---------------- */
 
 #mappa {
     position: relative;
     display: block;
-    width: 100%;
+    width: calc(100% - 20pt);
     max-width: 800pt;
-    margin: 0 auto;
+    margin: 30pt auto;
+    padding: 10pt;
+    background: linear-gradient(135deg, #f8fbfc 0%, #e8f4f8 100%);
+    border-radius: 16pt;
+    box-shadow: 0 8pt 24pt rgba(0, 107, 140, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#mappa:hover {
+    transform: translateY(-2pt);
+    box-shadow: 0 12pt 32pt rgba(0, 107, 140, 0.18);
 }
 
 #mappa img {
     width: 100%;
     height: auto;
     display: block;
+    border-radius: 12pt;
+    box-shadow: 0 4pt 12pt rgba(0, 0, 0, 0.08);
 }
 
+/* Map Points */
 .punto-mappa {
     position: absolute;
-    background: #006B8C80;
-    padding: 10pt;
-    border: 2pt solid white;
+    background: linear-gradient(135deg, #006B8C 0%, #008fb7 100%);
+    padding: 12pt;
+    border: 3pt solid white;
     border-radius: 100%;
     transform: translate(-50%, -50%);
     cursor: pointer;
+    box-shadow: 0 4pt 12pt rgba(0, 107, 140, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 4pt 12pt rgba(0, 107, 140, 0.3), 0 0 0 0 rgba(0, 143, 183, 0.4);
+    }
+    50% {
+        box-shadow: 0 4pt 12pt rgba(0, 107, 140, 0.3), 0 0 0 8pt rgba(0, 143, 183, 0);
+    }
+}
+
+.punto-mappa:hover {
+    background: linear-gradient(135deg, #008fb7 0%, #00a8d6 100%);
+    transform: translate(-50%, -50%) scale(1.2);
+    box-shadow: 0 6pt 20pt rgba(0, 143, 183, 0.5);
+    animation: none;
+}
+
+.punto-mappa:active {
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
 /* Tooltip */
@@ -156,24 +194,95 @@ footer {
     top: -10pt;
     left: 50%;
     transform: translate(-50%, -120%);
-    background: black;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     color: white;
-    padding: 5pt 8pt;
+    padding: 8pt 12pt;
     font-size: 11pt;
+    font-weight: 600;
     white-space: nowrap;
-    border-radius: 4pt;
+    border-radius: 6pt;
     opacity: 0;
     pointer-events: none;
-    transition: opacity .2s;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4pt 12pt rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.3pt;
 }
 
-.punto-mappa:hover::after {
+.punto-mappa::before {
+    content: '';
+    position: absolute;
+    top: -10pt;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width: 0;
+    height: 0;
+    border-left: 6pt solid transparent;
+    border-right: 6pt solid transparent;
+    border-top: 6pt solid #1a1a1a;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.punto-mappa:hover::after,
+.punto-mappa:hover::before {
     opacity: 1;
+    transform: translate(-50%, -130%);
 }
 
-
+/* Rotate Screen Message */
 #ruota-schermo {
     display: none;
+    text-align: center;
+    padding: 60pt 20pt;
+    margin: 40pt auto;
+    max-width: 400pt;
+    background: linear-gradient(135deg, #006B8C 0%, #00485c 100%);
+    border-radius: 16pt;
+    box-shadow: 0 8pt 24pt rgba(0, 107, 140, 0.3);
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20pt);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#ruota-schermo p {
+    color: white;
+    font-size: 18pt;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.6;
+    letter-spacing: 0.5pt;
+    position: relative;
+    animation: rotateIcon 2s ease-in-out infinite;
+}
+
+#ruota-schermo p::before {
+    content: '📱';
+    display: block;
+    font-size: 48pt;
+    margin-bottom: 16pt;
+    animation: rotatePhone 2s ease-in-out infinite;
+}
+
+@keyframes rotatePhone {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-15deg);
+    }
+    75% {
+        transform: rotate(15deg);
+    }
 }
 
 @media screen and (orientation: portrait) and (max-width: 500pt) {
@@ -185,14 +294,52 @@ footer {
     }
 }
 
+/* Map Modal */
 #mappa-modale {
     max-width: 600pt;
-    padding: 12pt;
-    border: 2pt solid black;
+    padding: 20pt;
+    border: none;
+    border-radius: 16pt;
+    box-shadow: 0 12pt 40pt rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #ffffff 0%, #f8fbfc 100%);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@media screen and (max-width: 600pt) {
+    #mappa-modale {
+        border-radius: 0;
+    }
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20pt);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+#mappa-modale::backdrop {
+    background: rgba(0, 72, 92, 0.7);
+    backdrop-filter: blur(4pt);
+    animation: backdropFadeIn 0.3s ease-out;
+}
+
+@keyframes backdropFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 #mappa-modale .flex-horizontal {
     max-height: 100%;
+    gap: 20pt;
 }
 
 #mappa-modale-img {
@@ -201,31 +348,83 @@ footer {
     max-height: calc(100vh - 28pt);
     aspect-ratio: 1 / 1;
     object-fit: cover;
+    border-radius: 12pt;
+    box-shadow: 0 4pt 16pt rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+#mappa-modale-img:hover {
+    transform: scale(1.02);
 }
 
 #mappa-modale-close {
     display: block;
     text-align: right;
-    font-size: 24pt;
+    font-size: 32pt;
     font-weight: bold;
     cursor: pointer;
     z-index: 3;
-    height: 24pt;
+    height: 32pt;
+    line-height: 24pt;
+    color: #006B8C;
+    transition: color 0.3s ease, transform 0.3s ease;
+    user-select: none;
+}
+
+#mappa-modale-close:hover {
+    color: #008fb7;
 }
 
 #mappa-modale-titolo {
     width: 100%;
+    color: #006B8C;
+    font-size: 24pt;
+    margin: 0 0 12pt 0;
+    font-weight: 700;
 }
 
 #mappa-modale-link {
+    display: inline-block;
+    padding: 10pt 20pt;
+    margin: 0 0;
     border: 2pt solid #008fb7;
+    border-radius: 8pt;
+    background: linear-gradient(135deg, #006B8C 0%, #008fb7 100%);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14pt;
+    transition: all 0.3s ease;
+    box-shadow: 0 2pt 8pt rgba(0, 143, 183, 0.3);
+}
+
+#mappa-modale-link:hover {
+    background: linear-gradient(135deg, #008fb7 0%, #00a8d6 100%);
+    transform: translateY(-2pt);
+    box-shadow: 0 4pt 12pt rgba(0, 143, 183, 0.5);
+}
+
+#mappa-modale-link:active {
+    transform: translateY(0);
 }
 
 .flex-horizontal {
     display: flex;
+    align-items: flex-start;
 }
 
 .flex-vertical {
     display: flex;
     flex-direction: column;
+    flex: 1;
+    min-height: 0; /* Important for nested scroll */
+}
+
+#mappa-modale-descrizione {
+    color: #333;
+    line-height: 1.6;
+    margin-top: 12pt;
+    overflow-y: auto;
+    flex: 1; /* Let it fill remaining space */
+    min-height: 0; /* Prevent automatic expansion */
 }

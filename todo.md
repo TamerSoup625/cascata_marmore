@@ -1,2 +1,3 @@
+- Fix modal on small screens
 - Mappa
 - Breve descrizione
