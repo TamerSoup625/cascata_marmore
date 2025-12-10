@@ -122,3 +122,87 @@ footer {
     background: rgba(255,255,255,0.15);
     transform: translateY(-2pt);
 }
+
+/* Extra */
+
+#mappa {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 800pt;
+    margin: 0 auto;
+}
+
+#mappa img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.punto-mappa {
+    position: absolute;
+    background: #006B8C80;
+    padding: 10pt;
+    border: 2pt solid white;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+#ruota-schermo {
+    display: none;
+}
+
+@media screen and (orientation: portrait) and (max-width: 500pt) {
+    #mappa {
+        display: none;
+    }
+    #ruota-schermo {
+        display: block;
+    }
+}
+
+#mappa-modale {
+    max-width: 600pt;
+    padding: 12pt;
+    border: 2pt solid black;
+}
+
+#mappa-modale .flex-horizontal {
+    max-height: 100%;
+}
+
+#mappa-modale-img {
+    position: relative;
+    max-width: 300pt;
+    max-height: calc(100vh - 28pt);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+#mappa-modale-close {
+    display: block;
+    text-align: right;
+    font-size: 24pt;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 3;
+    height: 24pt;
+}
+
+#mappa-modale-titolo {
+    width: 100%;
+}
+
+#mappa-modale-link {
+    border: 2pt solid #008fb7;
+}
+
+.flex-horizontal {
+    display: flex;
+}
+
+.flex-vertical {
+    display: flex;
+    flex-direction: column;
+}

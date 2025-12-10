@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Percorsi Cascata</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.js"></script>
 </head>
 
 <body>
@@ -14,6 +15,20 @@
     </header>
 
     <main>
+        <div id="ruota-schermo">
+            <p>Ruota lo schermo per visualizzare la mappa</p>
+        </div>
+        <div id="mappa">
+            <img src="images/mappa.png">
+            <button class="punto-mappa" onclick="showPoint('sentiero5')" style="left: 20%; top: 20%"></button>
+            <button class="punto-mappa" onclick="showPoint('farfalle')" style="left: 80%; top: 20%"></button>
+            <button class="punto-mappa" onclick="showPoint('sentiero3')" style="left: 20%; top: 40%"></button>
+            <button class="punto-mappa" onclick="showPoint('tunnel')" style="left: 80%; top: 40%"></button>
+            <button class="punto-mappa" onclick="showPoint('botanico')" style="left: 20%; top: 60%"></button>
+            <button class="punto-mappa" onclick="showPoint('laghetto')" style="left: 80%; top: 60%"></button>
+            <button class="punto-mappa" onclick="showPoint('secondosalto')" style="left: 20%; top: 80%"></button>
+            <button class="punto-mappa" onclick="showPoint('ponticello')" style="left: 80%; top: 80%"></button>
+        </div>
         <div id="place-contain">
             <!-- Snap 1 -->
             <a href="https://my.matterport.com/show/?m=JTsEVahtueA" target="_blank"><div>
@@ -58,6 +73,20 @@
         </div>
     </main>
 
+    <dialog id="mappa-modale">
+        <div class="flex-horizontal">
+            <img id="mappa-modale-img">
+            <div class="flex-vertical">
+                <div class="flex-horizontal">
+                    <h1 id="mappa-modale-titolo"></h1>
+                    <span id="mappa-modale-close" onclick="$('#mappa-modale')[0].close()">&times;</span>
+                </div>
+                <a id="mappa-modale-link">Visita</a>
+                <p id="mappa-modale-descrizione"></p>
+            </div>
+        </div>
+    </dialog>
+
     <footer>
         <p>© 2025 Cascate delle Marmore</p>
         <p>© 2025 ITT "Allevi San-Gallo"</p>
@@ -90,6 +119,8 @@
         </div>
         <p>Prof. Federico Cini | Prof. Clarissa Sirci</p>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>
