@@ -1,3 +1,3 @@
-- Fix modal on small screens
+- Mappa parte a schermo intero
 - Mappa
 - Breve descrizione
