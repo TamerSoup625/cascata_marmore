@@ -7,7 +7,6 @@ fetch("sentieri.json")
     })
 
 function showPoint(identifier) {
-    console.log(identifier);
     const sentiero = infoSentieri[identifier];
     $("#mappa-modale-img").attr("src", "");
     $("#mappa-modale-img").attr("src", sentiero.img);
